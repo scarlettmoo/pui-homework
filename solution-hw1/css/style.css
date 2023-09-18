@@ -14,8 +14,23 @@ body{
     background-color: black;
 }
 
+a:link { text-decoration: none; }
+
+a:visited { text-decoration: none; }
+
+a:hover { text-decoration: none; }
+
+a:active { text-decoration: none; }
+
+a .procart {
+    text-decoration-line: none;
+}
 .procart{
+    
+    width: 200px;
+    margin: 0 auto;
     font-weight: lighter;
+    color: black;
     font-size: 25px;
 }
 
