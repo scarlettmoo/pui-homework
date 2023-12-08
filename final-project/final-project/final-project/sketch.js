@@ -32,7 +32,7 @@ let nosePoint = 34;
 	//face = loadImage("crying.png");}
 
 function setup() {
-	createCanvas(600, 600);
+	createCanvas(windowWidth, windowHeight);
 	//rainStart();
 
 	//initialization, leave it here...
@@ -254,4 +254,8 @@ function createWord() {
 	}
 
 	words.push(newWord);
+}
+
+function windowResized() {
+	resizeCanvas(windowWidth, windowHeight)
 }
