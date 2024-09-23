@@ -16,7 +16,7 @@ p{
 .line{
     height: 5px;
     width:70%;
-    transform: translate(310px, -180px);
+    transform: translate(300px, -180px);
     background-color: black;
 }
 
@@ -36,6 +36,7 @@ h2.product {
     text-decoration: none; 
     text-align: right;
     margin-right: -50px;
+    transform: translate(60px, 0px);
   }
 
  
@@ -72,14 +73,13 @@ h3{
     font-weight: lighter;
     margin-top: 60px;
     margin-bottom: 0px;
-    transform: translate(100px, -180px);
+    transform: translate(110px, -180px);
 }
 
 .cinnamons{
     width:1000px; /*300px*/
     font-size:25px;
     padding:10px;
-    margin: 0 auto;
 }
 
 .cinnamons:hover{
@@ -91,7 +91,8 @@ h3{
     display:flex;
     width:1100px;
     align-items: right;
-    transform: translate(150px, -100px);
+    transform: translate(100px, -100px);
+    gap: 30px;
 }
 
 .cr2{
@@ -99,9 +100,8 @@ h3{
     flex-direction: row;
     align-items: flex-start;
     width: 1100px;
-    transform: translate(150px, -100px);
-    /* height: 500px; */
-    /* margin:80px auto 80px; */
+    transform: translate(100px, -100px);
+    gap: 30px;
 }
 
 .cinnamons:hover{
@@ -109,7 +109,7 @@ h3{
 }
 
 .rollpics{
-    width:285px;
+    width:320px;
     height:285px;
     border:3px solid black;
 }
