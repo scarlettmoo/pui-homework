@@ -73,7 +73,7 @@ function onSelectValueChange(){
     let glazingPrice = Number(glazingChange.value);
     let packPriceFinal = Number(packSizeChange.value);
 
-    const basePrice = 2.49;
+    const basePrice = 3.49;
     let updatedPrice = ((basePrice + glazingPrice)* packPriceFinal).toFixed(2);
     console.log(updatedPrice)
     let finalPrice = "$" + updatedPrice;
