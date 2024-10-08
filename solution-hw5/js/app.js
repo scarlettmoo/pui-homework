@@ -81,7 +81,6 @@ function onSelectValueChange(){
     let glazingPrice = Number(glazingChange.value);
     let packPriceFinal = Number(packSizeChange.value);
 
-    //const basePrice = 2.49;
     let updatedPrice = ((basePrice + glazingPrice)* packPriceFinal).toFixed(2);
     console.log(updatedPrice)
     let finalPrice = "$" + updatedPrice;
@@ -91,11 +90,11 @@ function onSelectValueChange(){
 }
 
 class Roll {
-    constructor(rollType, rollGlazing, packSize, basePrice) {
+    constructor(rollType, rollGlazing, packSize, rollPrice) {
         this.type = rollType;
         this.glazing =  rollGlazing;
         this.size = packSize;
-        this.basePrice = basePrice;
+        this.basePrice = rollPrice;
     }
 }
 

@@ -67,11 +67,11 @@ const rolls = {
 };
 
 class Roll {
-    constructor(rollType, rollGlazing, packSize, basePrice) {
+    constructor(rollType, rollGlazing, packSize, rollPrice) {
         this.type = rollType;
         this.glazing = rollGlazing;
         this.size = packSize;
-        this.basePrice = basePrice;
+        this.basePrice = rollPrice;
 
         this.element = null;
         this.createElement();
@@ -113,32 +113,37 @@ class Roll {
     // point cart item to corresponding HTML elements 
         rollImage.src = 'hw3_images/' + rolls[this.type].imageFile;
         rollName.innerText = this.type + ' Cinnamon Roll';
-        rollGlazingElement.innerText = 'Glazing: ' + this.glazing;
+        rollGlazingElement.innerText = this.glazing;
         rollPackSize.innerText = 'Pack Size: ' + this.size;
         rollPriceElement.innerText = "$" + CheckoutPrice;
     }
 
 // calculate the price based on glazing and pack size
-    calculatePrice(){
-        let glazingPrice = 0;
-        for (const glaze of allGlazing){
-            if(this.glazing == glaze.glazing){
-                glazingPrice = glaze.price;
-            }
+calculatePrice(){
+    let glazingPrice = 0;
+    for (const glaze of allGlazing) {
+        if (this.glazing.trim().toLowerCase() === glaze.glazing.trim().toLowerCase()) { // Make the comparison case-insensitive
+            glazingPrice = glaze.price;
+            console.log(`Matched glazing: ${this.glazing} with price ${glazingPrice}`);
+        } else {
+            console.log(`Glazing mismatch: comparing "${this.glazing}" to "${glaze.glazing}"`);
         }
-
-        let packPriceFinal = 0;
-        for (const pack of allPackSize){
-            if (this.size == pack.size){
-                packPriceFinal = pack.priceAdaption;
-            }
-        }
-
-        const updatedPrice = ((this.basePrice + glazingPrice) * packPriceFinal).toFixed(2);
-        console.log("PACK", packPriceFinal)
-        console.log(this.basePrice + 0);
-        return updatedPrice;
     }
+
+    let packPriceFinal = 0;
+    for (const pack of allPackSize) {
+        if (this.size === pack.size) {
+            packPriceFinal = pack.priceAdaption;
+            console.log(`Matched pack size: ${this.size} with price adaption ${packPriceFinal}`);
+        }
+    }
+
+    const updatedPrice = ((this.basePrice + glazingPrice) * packPriceFinal).toFixed(2);
+    console.log(`Base Price: ${this.basePrice}, Glazing Price: ${glazingPrice}, Pack Price Final: ${packPriceFinal}`);
+    return updatedPrice;
+}
+
+
 
     
 }
