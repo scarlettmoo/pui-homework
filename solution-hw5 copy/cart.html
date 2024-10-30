@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/cart.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar with logo -->
+    <div class="navibartitle">
+        <a href="index.html"><img id="logo" src="logo-01.svg" alt="bun bun shop logo"></a>
+        <div class="nav-bar">
+            <h2 class="product"><a href="index.html">PRODUCTS</a></h2>
+            <h2 class="product"><a href="cart.html">CART</a></h2>
+        </div>
+    </div>
+
+    <hr class="line">
+
+    <div class="rightAligned">
+        <!-- Container where cart items will be dynamically added -->
+        <div class="row-cartItem">
+            <template id="rolltemplate">
+                <div class="horizontalGroup">
+                    <img class="CartPicture" src="" alt="Roll Image">
+                    <div class="Cart">              
+                        <p class="rollName">Roll Name</p>
+                        <p class="glazingName">Glazing: </p>
+                        <p class="pack-size">Pack Size: </p>
+                    </div>
+                    <p class="Cartprice">$0.00</p>
+                    <div class="row">
+                        <p class="remove">Remove</p>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <hr class="cartline">
+
+        <div class="TotalPrice">
+            <p class="Total">Total</p>
+            <p class="endprice">$0.00</p>
+        </div>
+
+        <div class="checkoutbutton2">
+            <button class="checkout-butt2">Checkout</button>
+        </div>
+    </div>
+</body>
+</html>
+
