@@ -118,9 +118,9 @@ To further refine the user experience, Generative AI tools can support the desig
 ### *Tool Use*
 
 * NLP-based Generative AI Tools
-I will not rely on these tools for nuanced cultural or contextual interpretations, as they may lack the ability to fully understand the social subtleties of certain words or phrases. I’ll review the selected terms myself to ensure they are appropriate and relevant to the project’s goals. 
   * I will use it for analyzing and categorizing language related to slut-shaming and online harassment, which will provide a basis for selecting the most impactful words. 
   * I will not use it for auto-generate words because it will not help me understand the topic in depth.
+
 * Midjourney or Other Visual Style Generators
   * I will use it to explore visual styles and textures that fit with the project’s theme, experimenting with minimalist or impactful aesthetic ideas. This exploration can help me narrow down the visual direction for the project and identify unique styles that make the design more engaging.
   * I will not use it for finalizing the design, as I want to retain control over the project’s final aesthetic. Generative tools may offer inspiration, but the final implementation will be tailored manually to ensure consistency with the project’s message and theme.
