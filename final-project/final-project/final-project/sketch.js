@@ -9,14 +9,13 @@ var wordsInterval = 8;
 //https://handsfree.js.org/
 
 // the library is included in index.html so fork the sketch, 
-//don't just copy and paste this code
 
 //this object contains the tracking utility
 let myHandsfree;
 
 //the model has 68 "landmarks"
 //https://pyimagesearch.com/wp-content/uploads/2017/04/facial_landmarks_68markup.jpg
-//this grouping in arrays is arbitrary, you don't have to use them so literally
+//this grouping in arrays is arbitrary, don't have to use them so literally
 let leftEye = [43, 44, 45, 46, 47, 48];
 let rightEye = [37, 38, 39, 40, 41, 42];
 let leftEyebrow = [23, 24, 25, 26, 27];

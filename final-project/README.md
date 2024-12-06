@@ -1,38 +1,99 @@
-# **FP1 \- Proposal for Critique**
+# **FP4 \- Final Project Writeup**
 
-## Idea Sketches
+## Part 1: Website Description
 
-### *Idea 1 Interactive Art Installation*
+PATHS is an interactive art installation that incorporates p5.js and a face-tracking algorithm OpenCV to create an immersive experience for the audience. In this project, the basic idea is to simulate a visual metaphor where words like "slut," "whore," and "cheap" cascade from the top of the screen and come to a halt when they touch the viewer's face, evoking a powerful sense of metaphorical humiliation and mimicking the experience faced by women in their everyday life. This design will be interactive and engaging by allowing viewers to actively participate in the experience, taking them on a journey from the initial cascade of derogatory words to a moment of reflection and dialogue as they interact with the installation.
 
-The basic idea of my final project is to create an interactive installation that uses p5.js and a face-tracking algorithm to challenge societal norms around slut-shaming. In this experience, words like "slut" cascade from the top of the screen, only to come to a halt when they touch the viewer's face, viewers are prompted to confront the damaging impact of derogatory language on women's self-expression and autonomy. The design will be interactive and engaging by allowing users to physically move their faces, directly interacting with the falling words. To ensure accessibility, I will use clear and semantic HTML tags, making the installation easier to navigate with screen readers. The message I want to convey through this art installation is to challenge societal norms and confront the issue of slut-shaming. 
+Therefore, the purpose of PATHS is to challenge societal norms and confront the issue of slut-shaming in today’s society. I wish PATHS could encourage reflection and dialogue on the issues of slut-shaming, fostering engagement and prompting visitors to contribute to the ongoing conversation. The target audience of this project includes individuals interested in societal issues, gender equality advocates, and everyone seeking an immersive and thought-provoking interactive art experience. To convey the message of anti-slut shaming, minimalist visual style was adopted to enhance the impact, emphasizing the powerful message of PATHS. 
 
-![Local Image](images/idea1.png)
+## Part 2: User Interaction
+1. Move Around the Head to Test Face Tracking:
+  The user’s facial movements will trigger face tracking. The user needs to grant camera access to the webpage (Chrome preferably) so that the face-tracking algorithm can detect their face. And once they see the green dot on the camera (indicating camera is working properly), they can move around their face to test the face-tracking feature. The algorithm detects and responds to these movements in real-time, enhancing the interactive experience. It might take some time for the algorithm to load on some users' computer. The user’s face will be outlined with white lines. 
 
-### *Idea 2 Interactive Game Tetrics*
+2. Visual Engagement with Falling Words:
+  Humiliating words will cascade from the top of the screen, halt when they touch the viewer's face, and pile up when they stop falling to the bottom of the screen. And when they move away their face, the words will keep falling. Participants can move their face around to see if the words will stop falling when they touch the face, which creates a powerful and immersive experience.
 
-The basic idea of my second project is to create an interactive rendition of the classic game Tetris, titled "Tetrics," offering a digital environment where users can engage with this iconic puzzle game. Players will interact with falling blocks, arranging them to complete lines and challenge their problem-solving skills. The design will be interactive by allowing players to control the blocks using keyboard input or touch controls, making the gameplay intuitive and responsive. To ensure accessibility, I will use clear and semantic HTML tags, allowing for compatibility with screen readers and assistive technologies. The core message of this project is to provide an enjoyable and accessible gaming experience that fosters entertainment and mental challenge.
+## Part 3: External Tool
 
-![Local Image](images/idea2.png)
+1. p5.js  
+   * Why: the choice of p5.js is driven by its simplicity and versatility in creating interactive visual graphics. It aligns seamlessly with the project's goal of providing an engaging and visually appealing experience.
+   * How: I incorporated the OpenCV in p5.js and since the original face-tracking algorithm displays the user’s real face and background, I utilized p5.js to paint the background black and only keep the outline of the user’s face. In this way, it preserves a better artistic style than displaying the user’s real face and background directly.
+   * What does it add to my website: The integration of p5.js shifts the practical use of the original algorithm to a more artistic use and it maintains the minimalistic visual style. Also, it adds a layer of interactivity to the project, allowing for the creation of visually compelling graphics.
 
-### *Idea 3 Personal Portfolio*
+2. OpenCV
+   * Why: the selection of OpenCV as the face-tracking algorithm was driven by the need to incorporate accurate facial recognition into the interactive experience. OpenCV is a robust and widely used tool for computer vision tasks.
+   * How: I used OpenCV’s algorithm to detect the participant’s face and I found the p5.js version of OpenCV but was not working smoothly. So I broke down the algorithm into parts and removed some detection points on the face so it would work more smoothly.
+   * What does it add to my website: the use of OpenCV builds the foundation of the interactive aspect of this installation. It accurately tracks the viewer's face, allowing the falling words to respond in real time to the user's movements, enhancing the overall impact of the visual metaphor and contributing to the personalized nature of the experience.
 
-The basic idea of my third project is to create a personal portfolio that showcases my self-introduction, HCI projects, internship experiences, and artistic work, including drawing and photography. The portfolio will be interactive by providing easy navigation through different sections, allowing visitors to explore each area of my work seamlessly. To ensure accessibility, I will use clear and semantic HTML tags, making the website navigable with screen readers and accessible to all users. The goal of this portfolio is to present a well-rounded view of my professional and creative journey, highlighting both my technical skills in UIUX and artistic expression.
+## Part 4: Design Iteration
 
-![Local Image](images/idea3.png)
+During the development of PATHS, user testing played a pivotal role in shaping the project's visual design. Two prototypes were created, each with distinct visual styles. Prototype 1, featuring a minimalist design, garnered positive feedback for effectively conveying the falling
+words and engaging users. In contrast, users found Prototype 2's pixelated style confusing and less visually attractive. The feedback guided the decision to choose Prototype 1 as the final design.
 
-## Feedback Summary
+Simultaneously, the integration of OpenCV into the p5.js environment presented challenges. To incorporate OpenCV into p5.js, I had to do extensive research and see how other developers were implementing it. The first version of the algorithm seemed to be slow and buggy on some users’ computers during my user testing session. Therefore, I had to break down the code and by experimenting with adding and removing some detection points on the face, I improved the algorithm in multiple iterations.
 
-From the feedback session, I learned that people really liked my first idea, the interactive art installation under the theme of slut shaming, since it is fun to interact with but also has its educational purpose. My second idea of Tetris is also loved since it is a upgrade of the traditional game but it would be challenging to create something new on top of a classic game. And if I aim to build a 3D Tetris, it might be hard to realize the 3D visuals in JavaScript. And especially if I want to keep the rotation feature in a 3D Tetris, I will probably have to code each block individually and figure out the rotation figure in JavaScript, which will take up a lot of work. Also, I decide not to continue with my third idea, which is the personal portfolio, since a lot of people are doing portfolio for their final project so the TA suggets us to try something different and fun. 
+## Part 5: Implementation Challenge
 
-The main concern that was brought up during the feedback session was the ability to implement the face-tracking algorithm in JavaScript since I can only find similar algorithm in Python. Hoepefully I can find a similar algorithm in p5.js, which will be the easiet way I can imagine to implement in JavaScript. Also, people gave me valuable advice on the visuals of the interface. For example, when the words were 'raining' from the top of the screen to the bottom, I need to make sure they do not interfere with the background so it is easy for the audience to read. Additionally, I can include more subtle slut shaming words instead of only including intrusive words like "cunt". And I can also add an audio component to the interface when the words land on the viewer's face to build a more wholistic experience for the viewer. 
+Main challenges encountered were translating OpenCV to JavaScript and optimizing loading times for the face-tracking functionality. At first, it took a long time for face tracking to load and it stumbled a lot throughout the experience in my early user testings. Additionally, it took me a long time to determine the artistic visual design of the page since the original OpenCV code directly shows the real-time face and background. Thus, I had to design two prototypes and I was glad the minimalist one had good feedback and had a great way of conveying the
+message.
 
-## Feedback Digestion
+## Part 6: Generative AI Use and Reflection
 
-Thus, taking all the feedback above, I decide to move froward with my first idea for the final project, which is the interactive art installation under the theme of slut shaming. The feedback session highlighted several key areas to refine and improve my idea. The primary technical challenge identified was implementing the face-tracking algorithm in JavaScript. After the critique session, I did some research on the face-tracking algorithm and I found several robust face-tracking algorithms in Python but JavaScript offers fewer options, which limits my flexibility. However, I did find some face-tracking algorithm in p5.js which should work for my project. However, it only provides basic tracking of the face so maybe I need to customize the existing algorithm like adding more detection points on the face to make the algorithm work more precisely to achieve the desired effect.
+### Usage Experiences by Project Aspects
 
-Beyond the technical requirements, the feedback also prompted me to think about the project’s visual presentation, especially the display of the background and the words cascading from the top of the screen. To ensure that the audience can read the words properly, I plan to experiment with the background and text contrast. One approach could be using a single color for the background like black and a different color for the words like red to highlight the words. Another approach can be using a blurred or semi-transparent background to prevent the words from blending in, or adding a subtle shadow or glow effect around each word to make it stand out. These tweaks can enhance readability while preserving the visual cohesion of the installation. I will experiment with different approaches but I think for artistic purposes, I would like to maintain a minimalistic, monochromatic palette that aligns with the serious tone of the subject but also ensures clarity and focus on the interactive elements.
+| Tool Name | Ratings | design | plan | write code | debug | research |
+| :---- | :---- | :---- | :---- | :---- | :---- | :---- |
+| NLP-based Generative AI Tools | Usage | No | No | No | No | Yes |
+| NLP-based Generative AI Tools | Productivity | N/A | N/A | N/A | N/A | 5 |
+| Midjourney or Other Visual Style Generators| Usage | Yes | No | No | No | Yes |
+| Midjourney or Other Visual Style Generators | Productivity | 6 | N/A | N/A | N/A | 5 |
 
-Taking in all the feedback from today, the next step for me will be to do more research on the face-tracking algorithm to figure out how to incorporate it into JavaScript and experiment with different visuals. The session has provided actionable insights to push both the technical and thematic aspects of the installation forward, and I’m looking forward to exploring these solutions as I continue to develop the project.
+### Usage Reflection
+
+> Impact on your design and plan 
+* It matched my expectations and plan in [FP2](#generative-ai-use-plan) in that generative AI will help me leverage during the design and research stage. For example, 
+  1. AI-driven Natural Language Processing (NLP) tools: they helped me analyze language around online sexual harassment related to slut shaming, specifically focusing on gendered slurs and derogatory terms associated with slut-shaming. This offers me insights about the choices of the falling words. 
+  2. Generative AI image creation tools: they helped me visualize different visual styles of the face tracking algorithm. The mockups allow me to set my mind on a minimalist style and fine-tune the visual elements before full implementation, ensuring the aesthetics align with the project’s minimalist, impactful tone. 
+* GenAI tool did not influence my final design and implementation plan because they were only used mainly for brainstorm purposes. For example, 
+  1. AI-driven Natural Language Processing (NLP) tools: they did not help with the design and algorithmic decisions of the project. It was only used to research about what falling words I should include to reflect the situations of slut shaming in reality.
+  2. Generative AI image creation tools: althogh I used these tools to visualize several designs, given the specific visual of the face tracking algorithm, specific design decisions need to be tailored to fit the algorithm. Therefore, the tools were only used for brainstorming purposes.
+
+> Use patterns
+* I accepted the generations when they corrected my own bias of the matter. For example, 
+  1. AI-driven Natural Language Processing (NLP) tools: this tool once suggested instead of words like "slut" and "bitch" that were obvious slut shaming, more forms of slut shaming take on subtle forms like "cheap" on social media. And I adjusted my design according to the suggestion because I did not think of that aspect of slut shaming and the tools helped me identified my own bias of that matter.
+* I evaluated the generated suggestions by drawing inspirations from the tools but determining the final visual style by tailoring to the face-tracking algorithm. For example, 
+  1. Generative AI image creation tools: the mockups generated by these tools helped me visualize possible interfaces. Drawing inspirations from the mockups and tailoring my own design based on the algorithm, I developed two visuals during the user-testing stage.
+
+> Pros and cons of using GenAI tools
+* Pros
+  1. AI-driven Natural Language Processing (NLP): helped identfy my own bias about slut-shaming so I can include more subtle words related to slut-shaming, making my project more representative of the matter. 
+  2. Generative AI image creation tools: helped me brainstorm possible visuals, inspiring me to design different visuals for user testing.
+* Cons
+  1. AI-driven Natural Language Processing (NLP): only analyzed words related to slut-shaming online, especially social media, which could cause potential bias.
+  2. Generative AI image creation tools: most mockups were not feasible to implement with the specific face-tracking algorithm used.
+
+### Usage Log
+
+Document the usage logs (prompts and chat history links) for the GenAI tools you used. Some tools may not have an easy way to share usage logs, just try your best! Some instructions for different tools:
+1. [Generative AI image creation tools]: https://chatgpt.com/share/6753286d-7ed8-800e-8463-fd817184fcbd
+2. [AI-driven Natural Language Processing (NLP)]:
+![Local Image](images/MLresult.png)
+
+## Appendix
+
+The website is tested on iPads, Laptop, and iPhones.
+![Local Image](images/WAVE.png)
+
+---
+
+# **FP3 \- Final Project Check-in**
+
+Document the changes and progress of your project. How have you followed or changed your implementation & GenAI use plan and why? Remember to commit your code to save your progress.
+
+## Implementation Plan Updates
+
+- [ ] The interface only takes up the middle part of the laptop screen. Try to make it furfill the whole screen.
+- [ ] Make sure the size of the canvas adapts to both laptop and mobile devices.
 
 ---
 
@@ -131,4 +192,40 @@ Using generative AI responsibly in my project involves ensuring that the tools e
 
 ---
 
+# **FP1 \- Proposal for Critique**
 
+## Idea Sketches
+
+### *Idea 1 Interactive Art Installation*
+
+The basic idea of my final project is to create an interactive installation that uses p5.js and a face-tracking algorithm to challenge societal norms around slut-shaming. In this experience, words like "slut" cascade from the top of the screen, only to come to a halt when they touch the viewer's face, viewers are prompted to confront the damaging impact of derogatory language on women's self-expression and autonomy. The design will be interactive and engaging by allowing users to physically move their faces, directly interacting with the falling words. To ensure accessibility, I will use clear and semantic HTML tags, making the installation easier to navigate with screen readers. The message I want to convey through this art installation is to challenge societal norms and confront the issue of slut-shaming. 
+
+![Local Image](images/idea1.png)
+
+### *Idea 2 Interactive Game Tetrics*
+
+The basic idea of my second project is to create an interactive rendition of the classic game Tetris, titled "Tetrics," offering a digital environment where users can engage with this iconic puzzle game. Players will interact with falling blocks, arranging them to complete lines and challenge their problem-solving skills. The design will be interactive by allowing players to control the blocks using keyboard input or touch controls, making the gameplay intuitive and responsive. To ensure accessibility, I will use clear and semantic HTML tags, allowing for compatibility with screen readers and assistive technologies. The core message of this project is to provide an enjoyable and accessible gaming experience that fosters entertainment and mental challenge.
+
+![Local Image](images/idea2.png)
+
+### *Idea 3 Personal Portfolio*
+
+The basic idea of my third project is to create a personal portfolio that showcases my self-introduction, HCI projects, internship experiences, and artistic work, including drawing and photography. The portfolio will be interactive by providing easy navigation through different sections, allowing visitors to explore each area of my work seamlessly. To ensure accessibility, I will use clear and semantic HTML tags, making the website navigable with screen readers and accessible to all users. The goal of this portfolio is to present a well-rounded view of my professional and creative journey, highlighting both my technical skills in UIUX and artistic expression.
+
+![Local Image](images/idea3.png)
+
+## Feedback Summary
+
+From the feedback session, I learned that people really liked my first idea, the interactive art installation under the theme of slut shaming, since it is fun to interact with but also has its educational purpose. My second idea of Tetris is also loved since it is a upgrade of the traditional game but it would be challenging to create something new on top of a classic game. And if I aim to build a 3D Tetris, it might be hard to realize the 3D visuals in JavaScript. And especially if I want to keep the rotation feature in a 3D Tetris, I will probably have to code each block individually and figure out the rotation figure in JavaScript, which will take up a lot of work. Also, I decide not to continue with my third idea, which is the personal portfolio, since a lot of people are doing portfolio for their final project so the TA suggets us to try something different and fun. 
+
+The main concern that was brought up during the feedback session was the ability to implement the face-tracking algorithm in JavaScript since I can only find similar algorithm in Python. Hoepefully I can find a similar algorithm in p5.js, which will be the easiet way I can imagine to implement in JavaScript. Also, people gave me valuable advice on the visuals of the interface. For example, when the words were 'raining' from the top of the screen to the bottom, I need to make sure they do not interfere with the background so it is easy for the audience to read. Additionally, I can include more subtle slut shaming words instead of only including intrusive words like "cunt". And I can also add an audio component to the interface when the words land on the viewer's face to build a more wholistic experience for the viewer. 
+
+## Feedback Digestion
+
+Thus, taking all the feedback above, I decide to move froward with my first idea for the final project, which is the interactive art installation under the theme of slut shaming. The feedback session highlighted several key areas to refine and improve my idea. The primary technical challenge identified was implementing the face-tracking algorithm in JavaScript. After the critique session, I did some research on the face-tracking algorithm and I found several robust face-tracking algorithms in Python but JavaScript offers fewer options, which limits my flexibility. However, I did find some face-tracking algorithm in p5.js which should work for my project. However, it only provides basic tracking of the face so maybe I need to customize the existing algorithm like adding more detection points on the face to make the algorithm work more precisely to achieve the desired effect.
+
+Beyond the technical requirements, the feedback also prompted me to think about the project’s visual presentation, especially the display of the background and the words cascading from the top of the screen. To ensure that the audience can read the words properly, I plan to experiment with the background and text contrast. One approach could be using a single color for the background like black and a different color for the words like red to highlight the words. Another approach can be using a blurred or semi-transparent background to prevent the words from blending in, or adding a subtle shadow or glow effect around each word to make it stand out. These tweaks can enhance readability while preserving the visual cohesion of the installation. I will experiment with different approaches but I think for artistic purposes, I would like to maintain a minimalistic, monochromatic palette that aligns with the serious tone of the subject but also ensures clarity and focus on the interactive elements.
+
+Taking in all the feedback from today, the next step for me will be to do more research on the face-tracking algorithm to figure out how to incorporate it into JavaScript and experiment with different visuals. The session has provided actionable insights to push both the technical and thematic aspects of the installation forward, and I’m looking forward to exploring these solutions as I continue to develop the project.
+
+---
